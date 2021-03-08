@@ -7,6 +7,8 @@
                 {{ post.pblished_date }}
             </div>
         {% endif %}
+        <!--+플러스 모양으로 수정 페이지로 이동버튼 생기는것 (pk와 함께 보내준다)-->
+        <a class="btn btn-default" href="{% url 'post_edit' post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
