@@ -9,7 +9,9 @@ from .forms import PostForm
 
 
 def post_list(request):
+    # 글목록을 게시일 기준으로 정렬
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    # 글 목록을 함께 html로 반환
     return render(request, 'blog/post_list.html', {'posts': posts})
 
     
